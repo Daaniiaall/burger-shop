@@ -33,8 +33,8 @@ interface FormDataType {
 }
 
 type AddProductsSidebarProps = {
-  isOpenModal?: boolean;
-  setIsOpenModal?: any;
+  isOpenModal: boolean;
+  setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const ProductsSidebar: React.FC<AddProductsSidebarProps> = ({ isOpenModal, setIsOpenModal}) => {

@@ -13,7 +13,7 @@ import DetailsProductModal from "./DetailsProductModal";
 type ProductCardprops = {
   product: Product;
   isOpenModal: boolean;
-  setIsOpenModal: any;
+  setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const ProductsCard: React.FC<ProductCardprops> = ({ product, isOpenModal, setIsOpenModal }) => {
