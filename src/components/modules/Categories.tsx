@@ -1,4 +1,5 @@
 "use client"
+import { BiWorld } from "react-icons/bi";
 import { FaHamburger } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
 import { RiDrinks2Fill } from "react-icons/ri";
@@ -29,7 +30,7 @@ function Categories() {
 
   const clickHandler = () => {
     dispatch(setProducts(AllProducts))
-    setIsActive("")
+    setIsActive("all")
   }
 
   const active = "border-b-2 border-neutral-900";
@@ -37,6 +38,9 @@ function Categories() {
   return (
     <div className="categories">
       <div className="flex gap-3">
+        <button onClick={ clickHandler} className={isActive === "all" ? active : ""}>
+          <BiWorld />All
+        </button>
         <button onClick={() => filterProductsByCategory("main")} className={isActive === "main" ? active : ""}>
           <FaHamburger /> Main courses
         </button>

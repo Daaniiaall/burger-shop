@@ -36,7 +36,7 @@ function ProductsPage() {
       }
     };
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
