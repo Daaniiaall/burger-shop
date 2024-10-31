@@ -2,6 +2,7 @@ import { IoMdSettings } from "react-icons/io";
 import { FaLeaf } from "react-icons/fa";
 
 import { useState } from "react";
+import Image from "next/image";
 
 import { Product } from "../../../redux/features/products/ProductsSlice";
 import { useDispatch } from "react-redux";
@@ -32,9 +33,11 @@ const ProductsCard: React.FC<ProductCardprops> = ({ product, isOpenModal, setIsO
 
   return (
     <div className="bg-white w-64 max-h-max p-4 rounded-xl">
-      <img
-        src={imageUrl}
+      <Image
+        src={imageUrl || "/images/default-image.png"}
         alt={product.name}
+        width={10000}
+        height={10000}
         onError={imageError}
         className="mx-auto -top-8 relative h-1/3 w-1/2 rounded-full"
       />

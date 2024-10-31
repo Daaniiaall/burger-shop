@@ -5,6 +5,7 @@ import { CgClose } from "react-icons/cg";
 import { IoEye } from "react-icons/io5";
 
 import { useState } from "react";
+import Image from "next/image";
 
 import { useDispatch } from "react-redux";
 import { setDisplayProduct } from "../../../redux/features/displayProducts/displayProductSlice";
@@ -73,11 +74,13 @@ const DetailsProductModal: React.FC<DetailsProductModalProps> = ({product}) => {
                 </Drawer.Title>
                 
                 <div className="productDetails">
-                  <img
-                    src={imageUrl}
+                  <Image
+                    src={imageUrl || "/images/default-image.png"}
+                    width={10000}
+                    height={10000}
                     alt={product.name}
                     onError={imageError}
-                    className="mx-auto  relative h-1/3 w-1/3 rounded-full"
+                    className="mx-auto h-1/3 w-1/3 relative rounded-full"
                   />
                   <div className="text-center">
                     {product.isVegan ? (
